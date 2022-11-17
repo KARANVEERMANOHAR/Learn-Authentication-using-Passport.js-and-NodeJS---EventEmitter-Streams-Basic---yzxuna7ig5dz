@@ -69,7 +69,6 @@ app.post ("/login", passport.authenticate('local', {
     failureRedirect: "/login",
 }))
 app.get("/dashboard", (req, res) => {
-    if(req.user === undefined) req.user={name : req.body.username}
     res.status(200)
     res.render("dashboard.ejs", {name: req.user.name})
 })
